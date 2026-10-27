@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Pokémon, descubra seus tipos e monte sua lista de favoritos.">
+  <title>Pokédex | Explore sua próxima descoberta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="border-bottom bg-white">
+    <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Principal">
+      <a class="brand text-decoration-none" href="/" aria-label="Pokédex início"><span class="pokeball" aria-hidden="true"></span>Pokédex<span class="brand-dot">.</span></a>
+      <span class="small text-secondary d-none d-sm-inline">SEU GUIA POKÉMON</span>
+      <button class="btn btn-outline-dark rounded-pill" id="favoritos" aria-pressed="false">☆ Favoritos <span id="totalFavoritos">0</span></button>
+    </nav>
+  </header>
+  <main class="container py-4 py-md-5">
+    <section class="hero mb-4 p-4 p-md-5">
+      <div class="row align-items-center position-relative">
+        <div class="col-md-8">
+          <span class="eyebrow">EXPLORE. DESCUBRA. COLECIONE.</span>
+          <h1 class="display-4 fw-bold mt-3">Um universo inteiro<br>para <span>descobrir.</span></h1>
+          <p class="text-secondary mt-3 mb-0">Encontre seus Pokémon preferidos e conheça cada detalhe.</p>
+        </div>
+        <div class="col-md-4 text-center d-none d-md-block" aria-hidden="true"><div class="hero-ball"></div></div>
+      </div>
+    </section>
+    <section aria-label="Pesquisar Pokémon" class="mb-4">
+      <div class="row g-3">
+        <div class="col-md-6"><label for="busca" class="form-label">Buscar Pokémon</label><input class="form-control form-control-lg" id="busca" type="search" placeholder="Nome ou número. Ex.: Pikachu ou 25"></div>
+        <div class="col-sm-6 col-md-3"><label for="tipo" class="form-label">Tipo</label><select id="tipo" class="form-select form-select-lg"><option value="">Todos os tipos</option></select></div>
+        <div class="col-sm-6 col-md-3"><label for="ordem" class="form-label">Ordenar por</label><select id="ordem" class="form-select form-select-lg"><option value="numero">Número crescente</option><option value="nome">Nome: A–Z</option></select></div>
+      </div>
+    </section>
+    <div class="d-flex justify-content-between align-items-center mb-3"><h2 class="h4 fw-bold mb-0" id="tituloLista">Todos os Pokémon</h2><span id="contador" class="small text-secondary" role="status"></span></div>
+    <div id="aviso" class="alert alert-danger d-none" role="alert"></div>
+    <div id="lista" class="row g-4" aria-live="polite"><p>Carregando Pokémon…</p></div>
+    <p id="vazio" class="text-center py-5 text-secondary d-none">Nenhum Pokémon encontrado. Experimente outro nome ou tipo.</p>
+  </main>
+  <footer class="container py-4 mt-4 border-top text-secondary small d-flex justify-content-between flex-wrap gap-2"><span>Pokédex · Projeto de estudo</span><span>Pokémon e personagens pertencem aos seus respectivos titulares.</span></footer>
+  <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-labelledby="nomeDetalhes" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header border-0"><h2 id="nomeDetalhes" class="modal-title h4"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body pt-0" id="corpoDetalhes"></div></div></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
